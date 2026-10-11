@@ -1,0 +1,2 @@
+timestamp,fairness_lambda,epochs,best_hr10,final_ndcg10,final_loss,final_bce,final_fair_penalty,DP@10,EO@10
+2026-09-20 16:23:46,0.3,200,0.522,0.2745,0.8138,0.8138,0.0,0.5623,0.8435

@@ -1,0 +1,12 @@
+{
+  "protocol": "100-negative-sampling",
+  "n_users": 6040,
+  "n_negatives": 99,
+  "HR@5": 0.4166,
+  "NDCG@5": 0.2797,
+  "HR@10": 0.5927,
+  "NDCG@10": 0.3367,
+  "HR@20": 0.7775,
+  "NDCG@20": 0.3835,
+  "MRR": 0.2778
+}

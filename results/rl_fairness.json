@@ -1,0 +1,10 @@
+{
+  "model": "RL-CF",
+  "k": 10,
+  "n_users": 6034,
+  "n_items": 3125,
+  "gini": 0.9545,
+  "coverage": 0.3974,
+  "novelty": 0.7604,
+  "popularity_bias": 1474.3415
+}

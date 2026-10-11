@@ -1,0 +1,9 @@
+{
+  "model": "RL-CF",
+  "DP": 0.007,
+  "EO": 0.007,
+  "male_HR": 0.0275,
+  "female_HR": 0.0345,
+  "n_male": 4326,
+  "n_female": 1708
+}
