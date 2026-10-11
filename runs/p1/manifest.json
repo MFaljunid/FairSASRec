@@ -1,0 +1,36 @@
+{
+  "run": "p1",
+  "time": "2026-07-30 15:50:52",
+  "datasets": [
+    "ml-100k"
+  ],
+  "models": [
+    "bpr",
+    "sasrec",
+    "fair"
+  ],
+  "seed": 42,
+  "fairness_lambda": 0.3,
+  "summary": [
+    [
+      "ml-100k",
+      "BPR",
+      "trained"
+    ],
+    [
+      "ml-100k",
+      "SASRec",
+      "trained"
+    ],
+    [
+      "ml-100k",
+      "FairSASRec",
+      "trained"
+    ],
+    [
+      "ml-100k",
+      "evaluation",
+      "ok"
+    ]
+  ]
+}

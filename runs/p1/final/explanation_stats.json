@@ -1,0 +1,33 @@
+{
+  "n_users": 6034,
+  "n_changed": 5146,
+  "fraction": 0.8528339410009944,
+  "gap_displaced_mean": 0.456763985907942,
+  "gap_replacement_mean": 0.10294669010671738,
+  "mean_reduction": 0.3538172958012246,
+  "pct_reduction": -77.46173225498876,
+  "t_stat": 93.13220595533762,
+  "p_value": 0.0,
+  "pct_cases_improved": 0.882821609016712,
+  "zero_support_after": 0.7522347454333463,
+  "restricted": {
+    "min_support": 10,
+    "n": 1182,
+    "before": 0.43749026681395803,
+    "after": 0.41398705520656104,
+    "pct_reduction": -5.3722821717978215,
+    "t_stat": 3.7353062136126454,
+    "p_value": 0.0001964359867388482,
+    "pct_cases_improved": 0.5482233502538071
+  },
+  "example": {
+    "user": 33,
+    "gender": "F",
+    "backbone_top1": 141,
+    "backbone_title": "First Knight (1995)",
+    "backbone_gap": 0.4000000059604645,
+    "fair_top1": 2,
+    "fair_title": "Grumpier Old Men (1995)",
+    "fair_gap": 0.1034482792019844
+  }
+}

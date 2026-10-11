@@ -21,8 +21,8 @@ RESULTS_DIR = 'results/ml-1m'
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 CFG = {
-    'emb_dim':         128,
-    'hidden_dim':      512,
+    'emb_dim':         64,
+    'hidden_dim':      256,
     'window':          10,
     'fairness_lambda': 0.1,
     'n_negatives':     99,

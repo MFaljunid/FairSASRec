@@ -243,8 +243,11 @@ if os.path.exists(emb_path):
         bpr_emb = np.vstack([bpr_emb, pad])
     env.load_pretrained_embeddings(bpr_emb)
 
-policy = ActorCriticPolicy(emb_dim=EMB_DIM, n_items=N_ITEMS,
-                            hidden_dim=HIDDEN)
+policy = ActorCriticPolicy(
+    emb_dim=EMB_DIM,
+    n_items=N_ITEMS,
+    hidden_dim=HIDDEN
+)
 policy.load_state_dict(
     torch.load('results/policy_final.pt', map_location='cpu'))
 policy.eval()

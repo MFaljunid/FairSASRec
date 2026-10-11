@@ -14,7 +14,8 @@ from metrics.fairness_metrics import compute_exposure, gini_coefficient, coverag
 
 os.makedirs('results', exist_ok=True)
 
-DATA_DIR = 'data/ml-1m'
+DATA_DIR = os.environ.get('DATA_DIR', 'data/ml-1m')
+BPR_OUT = os.environ.get('OUT_DIR', 'results/BPR')
 train_df = pd.read_csv(f'{DATA_DIR}/train.csv')
 test_df  = pd.read_csv(f'{DATA_DIR}/test.csv')
 meta     = json.load(open(f'{DATA_DIR}/meta.json'))
@@ -70,10 +71,10 @@ exp = cornac.Experiment(
 exp.run()
 
 # ── Save model and embeddings ──────────────────────────────────────────
-os.makedirs('results/BPR', exist_ok=True)
+os.makedirs(BPR_OUT, exist_ok=True)
 from datetime import datetime
 timestamp  = datetime.now().strftime('%Y-%m-%d_%H-%M-%S-%f')
-model_path = f'results/BPR/{timestamp}.pkl'
+model_path = f'{BPR_OUT}/{timestamp}.pkl'
 with open(model_path, 'wb') as f:
     pickle.dump(bpr, f)
 print(f"BPR model saved to {model_path}")
@@ -108,10 +109,20 @@ for _, row in val_df.iterrows():
 
 # Gender for DP/EO
 user2idx    = {int(k): int(v) for k, v in meta['user2idx'].items()}
-raw_gender  = load_user_gender(f'{DATA_DIR}/users.dat')
+if 'ml-100k' in DATA_DIR:
+    raw_gender = {}
+    with open(f'{DATA_DIR}/u.user', 'r') as f:
+        for line in f:
+            parts = line.strip().split('|')
+            if len(parts) >= 3:
+                raw_gender[int(parts[0])] = parts[2]
+else:
+    raw_gender = load_user_gender(f'{DATA_DIR}/users.dat')
 user_gender = {user2idx[u]: g for u, g in raw_gender.items()
                if u in user2idx}
-
+print(f"Gender loaded — Male: {sum(1 for g in user_gender.values() if g=='M')} "
+      f"| Female: {sum(1 for g in user_gender.values() if g=='F')}")
+    
 bpr_u2c = {int(k): v for k, v in bpr.uid_map.items()}
 bpr_i2c = {int(k): v for k, v in bpr.iid_map.items()}
 

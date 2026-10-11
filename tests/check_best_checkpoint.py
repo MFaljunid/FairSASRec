@@ -33,7 +33,7 @@ test_items = dict(zip(
 ))
 
 env = RecEnv(f'{DATA_DIR}/train.csv', f'{DATA_DIR}/meta.json',
-             emb_dim=128, window=10)
+             emb_dim=64, window=10)
 bpr_emb = np.load(f'{DATA_DIR}/bpr_item_embeddings.npy')
 if bpr_emb.shape[0] < N_ITEMS:
     pad     = np.zeros((N_ITEMS - bpr_emb.shape[0],
@@ -67,7 +67,7 @@ best_ckpt = None
 for ckpt in checkpoints:
     if not os.path.exists(ckpt):
         continue
-    policy = ActorCriticPolicy(emb_dim=128, n_items=N_ITEMS, hidden_dim=512)
+    policy = ActorCriticPolicy(emb_dim=64, n_items=N_ITEMS, hidden_dim=256)
     policy.load_state_dict(torch.load(ckpt, map_location='cpu'))
     policy.eval()
 

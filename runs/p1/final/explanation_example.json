@@ -1,0 +1,39 @@
+{
+  "user": 3,
+  "gender": "M",
+  "unconstrained_top1": 1489,
+  "unconstrained_title": "Rocky (1976)",
+  "unconstrained_gap": 0.7731958627700806,
+  "constrained_top1": 2336,
+  "constrained_title": "From Russia with Love (1963)",
+  "constrained_gap": 0.45098039507865906,
+  "rho": 0.9515884518623352,
+  "softplus_alpha": 3.3295421600341797,
+  "top_attention": [
+    {
+      "item": 2735,
+      "title": "Hustler, The (1961)",
+      "weight": 0.23731321096420288
+    },
+    {
+      "item": 864,
+      "title": "E.T. the Extra-Terrestrial (1982)",
+      "weight": 0.1696784496307373
+    },
+    {
+      "item": 414,
+      "title": "Jurassic Park (1993)",
+      "weight": 0.08470626920461655
+    },
+    {
+      "item": 222,
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "weight": 0.06186000257730484
+    },
+    {
+      "item": 928,
+      "title": "Raiders of the Lost Ark (1981)",
+      "weight": 0.03391844034194946
+    }
+  ]
+}
